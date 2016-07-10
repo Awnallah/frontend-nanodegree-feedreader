@@ -107,20 +107,23 @@ $(function() {
 
     /* New test suit named "New Feed Selection"*/
     describe('New Feed Selection', function() {
-        var current,
-            newFeed;
+        var currentFeed,
+            newFeed,
+            currentTitle,
+            newTitle;
 
         beforeEach(function(done) {
             loadFeed(1, function() {
                 currentFeed = $('.feed').find('.entry').text();
                 currentTitle = $('.header-title').text();
+            });
 
                 loadFeed(0, function() {
                     newFeed = $('.feed').find('.entry').text();
                     newTitle = $('.header-title').text();
                     done();
 
-                });
+
 
             });
 
